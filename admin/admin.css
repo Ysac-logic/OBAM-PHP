@@ -1,0 +1,36 @@
+:root{--y:#F5C518;--yd:#D4A800;--bk:#111}
+body{background:#f4f5f7;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.adm-side{width:250px;background:#1c1c1c;color:#ddd;min-height:100vh;position:fixed;top:0;left:0;overflow-y:auto;z-index:1040;transition:transform .2s}
+.adm-side a{color:#cfcfcf;text-decoration:none;display:block;padding:8px 18px;font-size:.88rem;border-left:3px solid transparent}
+.adm-side a:hover,.adm-side a.act{background:#2a2a2a;color:#fff;border-left-color:var(--y)}
+.adm-side .grp{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#888;padding:16px 18px 4px}
+.adm-brand{padding:16px 18px;font-weight:800;color:#fff;font-size:1.1rem;border-bottom:1px solid #333}
+.adm-brand span{color:var(--y)}
+.adm-main{margin-left:250px;padding:20px 24px 60px}
+.adm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px;flex-wrap:wrap}
+.adm-top h1{font-size:1.4rem;font-weight:800;margin:0}
+.adm-card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:18px}
+.btn-y{background:var(--y);border:0;color:#111;font-weight:700}.btn-y:hover{background:var(--yd);color:#111}
+.stat{background:#fff;border-radius:14px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.06);height:100%}
+.stat b{font-size:1.7rem;display:block}
+.thumb-s{width:56px;height:40px;object-fit:cover;border-radius:6px;background:#eee}
+.table td,.table th{vertical-align:middle}
+.cm-grid{overflow:auto;max-height:70vh}.cm-grid table{font-size:.8rem}.cm-grid th{position:sticky;top:0;background:#fff;z-index:2}.cm-grid td:first-child,.cm-grid th:first-child{position:sticky;left:0;background:#fff;z-index:1;font-weight:700}
+.cm-grid input{min-width:90px;padding:2px 6px;font-size:.8rem}
+.adm-toggle{display:none}
+@media (max-width:991px){
+ .adm-side{transform:translateX(-100%)}.adm-side.open{transform:none}
+ .adm-main{margin-left:0;padding:14px 12px 60px}.adm-toggle{display:inline-block}
+}
+html,body{overflow-x:hidden}
+.adm-main{min-width:0}
+.adm-card img,.adm-card iframe{max-width:100%}
+.adm-side{max-width:85vw;overscroll-behavior:contain}
+@media (max-width:991px){
+ .adm-toggle{min-width:44px;min-height:44px}
+ .adm-side a{padding:12px 18px}
+ .adm-card{padding:14px}
+ .adm-top h1{font-size:1.15rem}
+ .btn,.form-control,.form-select{min-height:40px}
+}
+@media (max-width:575px){.adm-main{padding:12px 10px 60px}.adm-card .btn-y{width:100%}}
