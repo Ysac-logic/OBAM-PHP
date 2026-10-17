@@ -245,3 +245,38 @@ html{font-size:clamp(15px,.4vw + 13.2px,20px)}
   .section{padding:32px 0}
   .slider .swiper-slide{min-height:260px}
 }
+
+/* =====================================================================
+   DESTAQUE DA LOGO OBAM (abelhinha)
+   ===================================================================== */
+/* Selo da logo sobre o slider da home */
+.slider{position:relative}
+.slider .brand-badge{position:absolute;top:clamp(10px,2vw,28px);left:clamp(14px,3vw,48px);z-index:5;background:rgba(255,255,255,.96);border:2px solid var(--yellow);border-radius:999px;padding:clamp(6px,.8vw,12px) clamp(14px,1.8vw,28px);box-shadow:0 6px 22px rgba(0,0,0,.28);display:flex;align-items:center}
+.slider .brand-badge img{height:clamp(30px,4vw,64px);width:auto}
+
+/* Marca-d'água nas páginas internas */
+.page-title{position:relative;overflow:hidden}
+.page-title::after{content:"";position:absolute;right:clamp(-30px,2vw,60px);top:50%;transform:translateY(-50%);width:clamp(110px,16vw,300px);aspect-ratio:390/259;background:url('../image/logo.png') center/contain no-repeat;opacity:.16;pointer-events:none}
+.page-title .container{position:relative;z-index:1}
+@media (max-width:575px){.page-title::after{width:130px;opacity:.12;right:-20px}}
+
+/* Logo no rodapé */
+.footer .footer-brand{display:inline-flex;background:#fff;border-radius:16px;padding:clamp(10px,1.2vw,18px) clamp(16px,2vw,30px);border:2px solid var(--yellow);box-shadow:0 6px 24px rgba(245,197,24,.18);margin-bottom:14px}
+.footer .footer-brand img{height:clamp(44px,5vw,84px);width:auto}
+.footer .footer-about .logo{display:block}
+.footer .copyright .footer-bee{height:clamp(40px,4vw,64px);width:auto;margin:0 auto 10px;opacity:.9}
+@media (max-width:767px){.footer .footer-brand{margin-left:auto;margin-right:auto}}
+
+/* Marca-d'água na newsletter */
+.newsletter-strip{position:relative;overflow:hidden}
+.newsletter-strip::before{content:"";position:absolute;right:clamp(-20px,3vw,80px);top:50%;transform:translateY(-50%);width:clamp(140px,20vw,380px);aspect-ratio:390/259;background:url('../image/logo.png') center/contain no-repeat;opacity:.08;pointer-events:none}
+.newsletter-strip .container{position:relative}
+
+/* Preloader com logo pulsando */
+#preloader{flex-direction:column;gap:18px}
+#preloader img{width:clamp(180px,30vw,340px);height:auto;animation:obamPulse 1.4s ease-in-out infinite}
+@keyframes obamPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* Login do painel */
+.box .text-center img{max-height:none!important;width:min(100%,280px);height:auto}
+

@@ -72,7 +72,7 @@ function site_footer(): void {
 <footer id="footer" class="footer dark-background">
   <div class="container footer-top"><div class="row gy-4">
     <div class="col-lg-4 col-md-6 footer-about">
-      <a href="<?= u('index.php') ?>" class="logo d-flex align-items-center mb-2"><span class="sitename"><?= e($name) ?></span></a>
+      <a href="<?= u('index.php') ?>" class="logo mb-2"><span class="footer-brand"><img src="<?= e(img_url(cfg('logo', 'assets/image/logo-completa.png'))) ?>" alt="<?= e($name) ?>"></span></a>
       <div class="footer-contact">
         <p><?= e(cfg('site_subtitulo')) ?></p><p><?= e(cfg('site_org')) ?></p>
         <?php if (cfg('email')): ?><p class="mt-2"><strong>Email:</strong> <?= e(cfg('email')) ?></p><?php endif; ?>
@@ -107,7 +107,7 @@ function site_footer(): void {
   </div>
 </footer>
 <a href="#" id="scroll-top" class="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
-<div id="preloader"></div>
+<div id="preloader"><img src="<?= e(img_url(cfg('logo', 'assets/image/logo-completa.png'))) ?>" alt=""></div>
 <script src="<?= u('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?= u('assets/vendor/aos/aos.js') ?>"></script>
 <script src="<?= u('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
