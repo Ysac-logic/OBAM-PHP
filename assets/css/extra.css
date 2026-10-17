@@ -168,3 +168,80 @@ h1,h2,h3,h4,h5,h6,p,li,a{overflow-wrap:break-word}
 /* ===== Recomendações de vídeos: 2 colunas x 3 vídeos (coluna por coluna) ===== */
 .video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:24px;max-width:1000px;margin:0 auto}
 @media (max-width:575px){.video-grid{gap:12px}}
+
+/* =====================================================================
+   RESPONSIVIDADE FLUIDA — tamanhos escalam com a tela (clamp/vw)
+   Monitores pequenos/grandes, tablets, celulares
+   ===================================================================== */
+:root{
+  --header-h:clamp(64px,5.2vw,100px);
+  --section-padding:clamp(44px,6vw,104px) 0;
+  --gutter:clamp(14px,2.4vw,40px);
+}
+html{font-size:clamp(15px,.4vw + 13.2px,20px)}
+.container{padding-left:var(--gutter);padding-right:var(--gutter)}
+@media (min-width:1400px){.container{max-width:min(1320px,92vw)}}
+@media (min-width:1700px){.container{max-width:min(1560px,90vw)}}
+@media (min-width:2100px){.container{max-width:min(1860px,88vw)}}
+
+/* Cabeçalho + LOGO em destaque */
+.header{height:var(--header-h)}
+.header .logo img{height:calc(var(--header-h) - 18px);max-height:none;width:auto;max-width:62vw;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(245,197,24,.35));transition:transform .3s}
+.header .logo:hover img{transform:scale(1.04)}
+@media (max-width:991px){
+  .navmenu{top:var(--header-h)}
+  .header .logo img{height:calc(var(--header-h) - 22px);max-width:70vw}
+}
+@media (min-width:992px) and (max-width:1199px){
+  .navmenu>ul>li>a{padding:8px 9px;font-size:.78rem}
+}
+@media (min-width:1700px){.navmenu>ul>li>a{font-size:.95rem;padding:12px 18px}}
+
+/* Títulos e textos fluidos */
+.section-title{font-size:clamp(1.5rem,1rem + 1.8vw,3rem)}
+.page-title h1{font-size:clamp(1.3rem,1rem + 1vw,2.1rem)}
+.slider .content h2{font-size:clamp(1.5rem,1rem + 2.4vw,3.6rem)}
+.slider .content p{font-size:clamp(.92rem,.8rem + .4vw,1.2rem)}
+.stats-strip .stat-number{font-size:clamp(1.5rem,1rem + 1.8vw,3rem)}
+.stats-strip .stat-label{font-size:clamp(.62rem,.55rem + .25vw,.85rem)}
+.newsletter-strip h3{font-size:clamp(1.3rem,1rem + 1vw,2.2rem)}
+
+/* Blocos com altura fluida */
+.slider .swiper-slide{min-height:clamp(360px,56vh,760px)}
+.slider .content{padding:clamp(24px,4vw,72px) clamp(20px,5vw,88px) clamp(32px,5vw,80px);max-width:min(760px,100%)}
+.featured-img-card{height:clamp(300px,34vw,560px)}
+.post-card .card-thumb{height:auto;aspect-ratio:16/10}
+.blog-details .post-img{height:clamp(220px,32vw,520px)}
+.blog-details .article .content-body{padding:clamp(20px,3.4vw,52px)}
+.about .team-member .member-img{height:clamp(200px,20vw,320px)}
+.form-card{padding:clamp(20px,3.2vw,52px)}
+.map-wrapper iframe{width:100%}
+.mapa-iframe{width:100%;height:clamp(320px,50vw,640px)}
+.footer-top{padding:clamp(36px,5vw,80px) 0 clamp(24px,3vw,48px)}
+
+/* Tablet (576–991): grades mais confortáveis */
+@media (min-width:576px) and (max-width:991px){
+  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+  .stats-strip .stat-item:nth-child(2n){border-right:0}
+  .video-grid{gap:16px}
+  .topic-pills,.partner-strip{max-width:720px!important}
+}
+/* Telas muito grandes: grades mais densas */
+@media (min-width:1700px){
+  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+  .video-grid{max-width:1400px}
+  .topic-pills,.partner-strip{max-width:860px!important}
+}
+@media (min-width:1200px) and (max-width:1399px){.post-card h3{font-size:.92rem}}
+/* Celular pequeno */
+@media (max-width:359px){
+  html{font-size:14px}
+  .btn-primary-y,.btn-outline-y{padding:10px 18px;font-size:.8rem}
+  .stats-strip .stat-number{font-size:1.35rem}
+}
+/* Celular em paisagem / telas baixas */
+@media (max-height:480px) and (orientation:landscape){
+  :root{--header-h:56px}
+  .section{padding:32px 0}
+  .slider .swiper-slide{min-height:260px}
+}
