@@ -334,3 +334,31 @@ html{font-size:clamp(15px,.4vw + 13.2px,20px)}
   .navmenu>ul>li>a{font-size:.78rem;padding:8px 9px}
 }
 @media (min-width:1536px){.header .logo img{height:clamp(36px,2.6vw,64px)}}
+
+/* ===== Visual minimalista: navbar + título (branco / preto / amarelo) ===== */
+.header{border-bottom:1px solid var(--gray-200);box-shadow:none}
+.header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.07)}
+@media (min-width:992px){
+  .navmenu>ul{background:#eeeeec;border:1px solid #e0e0dd;box-shadow:inset 0 1px 2px rgba(0,0,0,.06);border-radius:999px;padding:5px;gap:2px}
+  .navmenu>ul>li>a{position:relative;color:var(--gray-700);font-weight:600;letter-spacing:.01em;background:transparent!important;border-radius:999px;border-bottom:0!important;transition:background .2s,color .2s,box-shadow .2s}
+  .navmenu>ul>li>a:hover,.navmenu>ul>li:hover>a{background:#fff!important;color:var(--black);box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 1px var(--gray-200)}
+  .navmenu>ul>li>a.active,.navmenu>ul>li>a.active:hover{background:var(--black)!important;color:#fff;box-shadow:none}
+  .navmenu>ul>li>a.active .toggle-dropdown{color:var(--yellow);opacity:1}
+  .navmenu>ul>li>a.active::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--yellow);flex:none}
+  .navmenu .toggle-dropdown{opacity:.45}
+  .navmenu .dropdown ul{border:1px solid var(--gray-200);border-top:2px solid var(--yellow);border-radius:0 0 14px 14px;box-shadow:0 18px 40px rgba(0,0,0,.10);padding:6px}
+  .navmenu .dropdown>ul::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+  .navmenu .dropdown ul li a{border-radius:8px;color:var(--gray-700);box-shadow:inset 0 0 0 var(--yellow);transition:background .2s,color .2s,box-shadow .2s}
+  .navmenu .dropdown ul li a:hover{background:var(--gray-100);color:var(--black);box-shadow:inset 3px 0 0 var(--yellow)}
+}
+.page-title{background:var(--black);border-bottom:0;padding:clamp(26px,3.4vw,44px) 0}
+.page-title h1{color:#fff;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.page-title h1::before{content:"";display:block;width:40px;height:4px;border-radius:2px;background:var(--yellow);margin-bottom:12px}
+.page-title .breadcrumbs ol{font-size:.82rem}
+.page-title .breadcrumbs a{color:rgba(255,255,255,.6)}
+.page-title .breadcrumbs a:hover{color:var(--yellow)}
+.page-title .breadcrumbs li+li::before{color:rgba(255,255,255,.35)}
+.page-title .breadcrumbs .current{color:var(--yellow);font-weight:600}
+.page-title::after{opacity:.1}
+@media (min-width:992px) and (max-width:1199px){.navmenu>ul{border-radius:22px}}
+@media (max-width:991px){.page-title h1::before{margin-left:auto;margin-right:auto}}

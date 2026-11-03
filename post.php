@@ -25,7 +25,7 @@ $rel = qa("SELECT * FROM posts WHERE tipo='post' AND status='publicado' AND id<>
     <?php if ($rel): ?><div class="sidebar-widget mb-4"><h4>Leia Também</h4>
       <?php foreach ($rel as $r): ?><div class="article-row"><div class="thumb"><img src="<?= e(img_url($r['imagem'])) ?>" alt="" loading="lazy"></div><div><div class="cat"><?= e($r['categoria']) ?></div><h4><a href="<?= u('post.php?slug=' . urlencode($r['slug'])) ?>"><?= e($r['titulo']) ?></a></h4></div></div><?php endforeach; ?></div><?php endif; ?>
     <div class="sidebar-widget"><h4>Participe</h4><p style="font-size:.87rem;color:var(--gray-500)">Contribua com o OBAM: cadastre-se, faça uma denúncia ou envie um feedback.</p>
-      <a href="<?= u('cadastro.php') ?>" class="btn-primary-y d-block text-center mb-2">Cadastro do Apicultor</a>
+      <a href="<?= u('cadastro.php') ?>" class="btn-primary-y d-block text-center mb-2">Cadastro de Apicultor(a) / Meliponicultor(a)</a>
       <a href="<?= u('denuncias.php') ?>" class="btn-outline-y d-block text-center">Fazer Denúncia</a></div>
   </div></div></div></section>
 <?php site_footer();
