@@ -73,7 +73,6 @@ function site_footer(): void {
 <footer id="footer" class="footer dark-background">
   <div class="container footer-top"><div class="row gy-4">
     <div class="col-lg-4 col-md-6 footer-about">
-      <a href="<?= u('index.php') ?>" class="logo mb-2"><span class="footer-brand"><img src="<?= e(img_url(cfg('logo', 'assets/image/logo-completa.png'))) ?>" alt="<?= e($name) ?>"></span></a>
       <div class="footer-contact">
         <p><?= e(cfg('site_subtitulo')) ?></p><p><?= e(cfg('site_org')) ?></p>
         <?php if (cfg('email')): ?><p class="mt-2"><strong>Email:</strong> <?= e(cfg('email')) ?></p><?php endif; ?>
