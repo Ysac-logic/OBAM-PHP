@@ -39,7 +39,7 @@ function site_header(string $title, string $bodyClass = '', string $desc = ''): 
   <?php if ($desc): ?><meta name="description" content="<?= e($desc) ?>"><?php endif; ?>
   <link href="<?= e(img_url(cfg('favicon', 'assets/img/favicon.png'))) ?>" rel="icon">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="<?= u('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
   <link href="<?= u('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
   <link href="<?= u('assets/vendor/aos/aos.css') ?>" rel="stylesheet">
@@ -48,6 +48,7 @@ function site_header(string $title, string $bodyClass = '', string $desc = ''): 
   <link href="<?= u('assets/css/extra.css') . '?v=' . @filemtime(__DIR__ . '/../assets/css/extra.css') ?>" rel="stylesheet">
 </head>
 <body class="<?= e($bodyClass) ?>">
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><?php for ($i = 0; $i < 8; $i++): ?><span><?= e($name) ?> · <?= e(cfg('site_subtitulo', 'Observatório Baiano de Apicultura e Meliponicultura')) ?></span><?php endfor; ?></div></div>
 <header id="header" class="header d-flex align-items-center sticky-top">
   <div class="container d-flex align-items-center justify-content-between">
     <a href="<?= u('index.php') ?>" class="logo d-flex align-items-center gap-2"><img src="<?= e(img_url(cfg('logo', 'assets/image/logo-completa.png'))) ?>" alt="<?= e($name) ?>"></a>

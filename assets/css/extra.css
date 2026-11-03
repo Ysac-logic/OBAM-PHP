@@ -362,3 +362,134 @@ html{font-size:clamp(15px,.4vw + 13.2px,20px)}
 .page-title::after{opacity:.1}
 @media (min-width:992px) and (max-width:1199px){.navmenu>ul{border-radius:22px}}
 @media (max-width:991px){.page-title h1::before{margin-left:auto;margin-right:auto}}
+
+/* =====================================================================
+   REDESIGN "Slush" — sticker/paper em AMARELO · PRETO · BRANCO
+   Regras: contornos pretos 1px, sem sombras, sem gradientes,
+   pílulas 999px, cards 20–30px. Responsivo via clamp().
+   ===================================================================== */
+:root{
+  --yellow:#FFD731;--yellow-dark:#F2C500;--yellow-light:#FFEC8A;--yellow-pale:#FFF6C7;
+  --black:#000;--gray-900:#000;--gray-700:#222;--gray-500:#555;--gray-200:#000;--gray-100:#F4F4F2;
+  --nav-hover-color:#000;--nav-dropdown-hover-color:#000;
+  --font-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --radius-sm:12px;--radius-md:20px;--radius-lg:30px;
+  --shadow-sm:none;--shadow-md:none;--shadow-lg:none;
+}
+body{font-family:var(--font-sans);font-weight:500;color:#111;letter-spacing:-.005em;background:#fff}
+h1,h2{font-family:var(--font-display);font-weight:400;line-height:1.05;letter-spacing:-.01em;overflow-wrap:break-word}
+h3,h4,h5,h6{font-family:var(--font-sans);font-weight:700;line-height:1.2;letter-spacing:-.01em}
+a{color:#000}
+a:hover{color:#000;text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;text-underline-offset:3px}
+.btn-primary-y:hover,.btn-outline-y:hover,.slide-cta:hover,.navmenu a:hover,.logo:hover,.footer a:hover,.topic-pill:hover,.btn-submit:hover,.post-card a:hover,.nl-form button:hover{text-decoration:none}
+::selection{background:var(--yellow);color:#000}
+
+/* Marquee (faixa preta no topo) */
+.marquee{background:#000;color:#fff;overflow:hidden;white-space:nowrap;font-size:12px;font-weight:700;letter-spacing:.032em;text-transform:uppercase;line-height:1}
+.marquee-track{display:inline-flex;padding:9px 0;animation:marquee 38s linear infinite}
+.marquee span{padding:0 22px}
+.marquee span::after{content:"✦";color:var(--yellow);margin-left:44px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* Seções */
+.section-label{background:#fff;color:#000;border:1px solid #000;border-radius:999px;font-size:.7rem;letter-spacing:.08em;padding:6px 14px}
+.section-label i{color:#000}
+.section-title{font-size:clamp(1.5rem,2.4vw + .7rem,2.7rem);text-transform:uppercase}
+.divider-y{background:#000;width:48px;height:6px;border-radius:999px}
+.main>.section:nth-of-type(even){background:var(--gray-100)}
+
+/* Botões */
+.btn-primary-y,.form-card .btn-submit,.btn-submit{background:#000;color:#fff;border:1px solid #000;border-radius:999px;font-weight:700;letter-spacing:.03em;box-shadow:none;padding:12px 26px;transition:background .2s,color .2s,transform .2s}
+.btn-primary-y:hover,.form-card .btn-submit:hover,.btn-submit:hover{background:var(--yellow);color:#000;transform:translateY(-2px);box-shadow:none}
+.btn-outline-y{background:#fff;color:#000;border:1px solid #000;border-radius:999px;letter-spacing:.03em;padding:11px 26px}
+.btn-outline-y:hover{background:var(--yellow);color:#000;transform:translateY(-2px)}
+
+/* Header + navbar (pílula com contorno preto) */
+.header{background:#fff;border-bottom:1px solid #000;box-shadow:none}
+.header.scrolled{box-shadow:none}
+.header .logo img{filter:none}
+.mobile-nav-toggle{color:#000;font-size:1.9rem}
+@media (min-width:992px){
+  .navmenu>ul{background:#fff;border:1px solid #000;border-radius:999px;box-shadow:none;padding:4px;gap:2px}
+  .navmenu>ul>li>a{color:#000;font-weight:700;letter-spacing:.03em;border-radius:999px;background:transparent!important;box-shadow:none}
+  .navmenu>ul>li>a::after{display:none}
+  .navmenu>ul>li>a:hover,.navmenu>ul>li:hover>a{background:var(--yellow)!important;color:#000;box-shadow:none}
+  .navmenu>ul>li>a.active,.navmenu>ul>li>a.active:hover{background:#000!important;color:#fff;box-shadow:none}
+  .navmenu>ul>li>a.active::before{background:var(--yellow)}
+  .navmenu .dropdown ul{background:#fff;border:1px solid #000;border-top:1px solid #000;border-radius:20px;box-shadow:none;padding:8px}
+  .navmenu .dropdown ul li a{color:#000;font-weight:600;border-radius:12px;box-shadow:none}
+  .navmenu .dropdown ul li a:hover{background:var(--yellow);color:#000;box-shadow:none}
+}
+@media (max-width:991px){
+  .navmenu a{color:#000;font-weight:700}
+  .navmenu a:hover,.navmenu .active{color:#000}
+}
+
+/* Título das páginas internas */
+.page-title{background:var(--yellow);border-bottom:1px solid #000;padding:clamp(28px,4vw,56px) 0}
+.page-title h1{color:#000;font-size:clamp(1.5rem,3.2vw + .5rem,3.2rem);text-transform:uppercase;line-height:1.02;font-weight:400}
+.page-title h1::before{background:#000;width:48px;height:6px;border-radius:999px}
+.page-title::after{opacity:.14}
+.page-title .breadcrumbs a{color:rgba(0,0,0,.65)}
+.page-title .breadcrumbs a:hover{color:#000}
+.page-title .breadcrumbs li+li::before{color:#000}
+.page-title .breadcrumbs .current{color:#000;font-weight:700}
+
+/* Hero / slider (overlay chapado, sem gradiente) */
+.slider{background:#000}
+.slider .swiper-slide::before{background:rgba(0,0,0,.5)}
+.slider .content h2{font-size:clamp(1.6rem,3.6vw + .4rem,3.4rem);text-transform:uppercase;line-height:1.02}
+.slider .slide-tag{background:var(--yellow);color:#000;border:1px solid #000;border-radius:999px;letter-spacing:.06em}
+.slider .content .slide-cta{background:var(--yellow);color:#000;border:1px solid #000;border-radius:999px;padding:11px 24px;font-weight:700}
+.slider .content .slide-cta:hover{background:#fff}
+.slider .swiper-pagination-bullet-active{background:var(--yellow)}
+
+/* Faixa de números */
+.stats-strip{background:var(--yellow);border-top:1px solid #000;border-bottom:1px solid #000}
+.stats-strip .stat-item{border-right:1px solid #000}
+.stats-strip .stat-number{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,2vw + 1rem,2.6rem)}
+.stats-strip .stat-label{color:#000;letter-spacing:.08em}
+
+/* Cards — contorno preto, cantos suaves, sem sombra */
+.post-card,.sidebar-widget,.trending-box,.feedback-card,.partner-card,.contact-info-card,.featured-img-card,.gallery-item,.article-row,.form-card,.map-wrapper{background:#fff;border:1px solid #000;border-radius:20px;box-shadow:none}
+.form-card{border-radius:30px}
+.post-card:hover,.partner-card:hover,.feedback-card:hover,.contact-info-card:hover{background:var(--yellow-pale);border-color:#000;box-shadow:none;transform:translateY(-3px)}
+.post-card .card-cat{color:#000;background:var(--yellow);border:1px solid #000;border-radius:999px;display:inline-block;align-self:flex-start;padding:3px 10px;letter-spacing:.06em}
+.post-card h3 a,.article-row h3 a{color:#000}
+.sidebar-widget h4{font-weight:800;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #000;padding-bottom:10px}
+.topic-pill{background:#fff;color:#000;border:1px solid #000;border-radius:999px;box-shadow:none}
+.topic-pill:hover{background:var(--yellow);transform:translateY(-2px)}
+.topic-pill i{color:#000}
+.featured-img-card,.gallery-item{overflow:hidden}
+
+/* Formulários */
+.form-control,.form-select,textarea.form-control{border:1px solid #000;border-radius:14px;background:#fff;color:#000}
+.form-control:focus,.form-select:focus{border-color:#000;box-shadow:0 0 0 3px var(--yellow);outline:0}
+.form-check-input{border:1px solid #000}
+.form-check-input:checked{background-color:#000;border-color:#000}
+.form-check-input:focus{box-shadow:0 0 0 3px var(--yellow);border-color:#000}
+.lgpd-box{background:var(--yellow-pale);border:1px solid #000;border-radius:20px}
+.alert{border:1px solid #000;border-radius:16px}
+.badge.bg-warning{background:var(--yellow)!important;color:#000!important;border:1px solid #000;border-radius:999px}
+
+/* Newsletter + rodapé */
+.newsletter-strip{background:var(--yellow);border-top:1px solid #000;border-bottom:1px solid #000}
+.newsletter-strip h3{color:#000;font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:clamp(1.3rem,1.6vw + .8rem,2rem)}
+.newsletter-strip p{color:#000}
+.newsletter-strip::before{opacity:.12}
+.newsletter-strip .nl-form input{border:1px solid #000;background:#fff}
+.newsletter-strip .nl-form button{background:#000;color:#fff;border:1px solid #000}
+.newsletter-strip .nl-form button:hover{background:#fff;color:#000}
+@media (max-width:575px){.newsletter-strip .nl-form{flex-direction:column}}
+.footer{background:#000;border-top:0;color:rgba(255,255,255,.8)}
+.footer h4{color:var(--yellow)}
+.footer .footer-brand{background:#fff;border:1px solid #fff;box-shadow:none;border-radius:20px}
+.footer .social-links a{background:transparent;border:1px solid #fff;color:#fff}
+.footer .social-links a:hover{background:var(--yellow);border-color:var(--yellow);color:#000}
+.footer .copyright{border-top:1px solid rgba(255,255,255,.25)}
+.scroll-top{background:#000;border:1px solid #000;border-radius:50%;box-shadow:none}
+.scroll-top i{color:var(--yellow)}
+.scroll-top:hover{background:var(--yellow)}
+.scroll-top:hover i{color:#000}
