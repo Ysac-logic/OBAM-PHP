@@ -6,6 +6,6 @@
     <a href="<?= u('mapa.php') ?>" class="topic-pill"><i class="bi bi-map"></i> Mapa de Apiários</a>
     <a href="<?= u('galeria.php') ?>" class="topic-pill"><i class="bi bi-images"></i> Galeria</a>
     <a href="<?= u('videos.php') ?>" class="topic-pill"><i class="bi bi-play-circle"></i> Vídeos</a>
-    <a href="<?= u('cadastro.php') ?>" class="topic-pill"><i class="bi bi-person-vcard"></i> Cadastro do Apicultor</a>
+    <a href="<?= u('cadastro.php') ?>" class="topic-pill"><i class="bi bi-person-vcard"></i> Cadastro de Apicultor(a) / Meliponicultor(a)</a>
     <a href="<?= u('denuncias.php') ?>" class="topic-pill"><i class="bi bi-megaphone"></i> Denúncias</a>
   </div></div></section>

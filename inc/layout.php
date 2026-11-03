@@ -44,8 +44,8 @@ function site_header(string $title, string $bodyClass = '', string $desc = ''): 
   <link href="<?= u('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
   <link href="<?= u('assets/vendor/aos/aos.css') ?>" rel="stylesheet">
   <link href="<?= u('assets/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
-  <link href="<?= u('assets/css/main.css') ?>" rel="stylesheet">
-  <link href="<?= u('assets/css/extra.css') ?>" rel="stylesheet">
+  <link href="<?= u('assets/css/main.css') . '?v=' . @filemtime(__DIR__ . '/../assets/css/main.css') ?>" rel="stylesheet">
+  <link href="<?= u('assets/css/extra.css') . '?v=' . @filemtime(__DIR__ . '/../assets/css/extra.css') ?>" rel="stylesheet">
 </head>
 <body class="<?= e($bodyClass) ?>">
 <header id="header" class="header d-flex align-items-center sticky-top">
@@ -97,7 +97,7 @@ function site_footer(): void {
       <li><a href="<?= u('galeria.php') ?>">Galeria</a></li>
       <li><a href="<?= u('literatura.php') ?>">Literatura</a></li></ul></div>
     <div class="col-lg-2 col-md-3 col-6 footer-links"><h4>Participar</h4><ul>
-      <li><a href="<?= u('cadastro.php') ?>">Cadastro do Apicultor</a></li>
+      <li><a href="<?= u('cadastro.php') ?>">Cadastro de Apicultor(a) / Meliponicultor(a)</a></li>
       <li><a href="<?= u('denuncias.php') ?>">Denúncias</a></li>
       <li><a href="<?= u('contato.php') ?>">Contato</a></li></ul></div>
   </div></div>
